@@ -106,6 +106,16 @@ services:
       - elasticsearch
     restart: unless-stopped
 
+  splunk:
+    container_name: splunk
+    image: splunk/splunk
+    ports:
+      - "8000:8000"
+      - "8088:8088"
+    environment:
+      SPLUNK_PASSWORD: "ThisIsMyMagicPassword"
+      SPLUNK_START_ARGS: "--accept-license"
+
 networks:
   elk:
     driver: bridge
