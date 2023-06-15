@@ -16,5 +16,8 @@ cd /ubuntu-docker-log
 # Remove existing containers
 sudo docker-compose rm --stop --force
 
+# Setup Docker containers
+sudo docker-compose -f /srv/ubuntu-docker-log/docker-compose.yml up setup
+
 # Create Docker containers
 sudo docker-compose -f /srv/ubuntu-docker-log/docker-compose.yml up -d
